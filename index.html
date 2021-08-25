@@ -53,7 +53,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/archives/aboutme.html">主页</a></li>
 	        
 				<li><a href="/archives/index.html">目录</a></li>
 	        
@@ -129,7 +129,7 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives/aboutme.html">主页</a></li>
 		        
 					<li style="width: 33.333333333333336%"><a href="/archives/index.html">目录</a></li>
 		        
@@ -149,6 +149,88 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-16届智能车比赛总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/25/16%E5%B1%8A%E6%99%BA%E8%83%BD%E8%BD%A6%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/">16届智能车比赛总结</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/25/16%E5%B1%8A%E6%99%BA%E8%83%BD%E8%BD%A6%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-08-25T12:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;16届智能车比赛是我第一次参加智能车比赛，因为中途的一些插曲，备战的时间仅仅才不到一个月，接下来是硬件部分的一些个人总结。</p>
+<h3>控制器</h3> 
+&emsp;&emsp;我所参与的是基础四轮组，使用的则是电磁为主+摄像头为辅。摄像头仅用于识别斑马线使车辆入库，在仅竞速的基础四轮里，tc264则是完全的性能多余，并且就我们组内软件表示，tc264的库跟之前k60的库差不多，加上他之前也有过调车的经验，所以我们能在不到一个月的时间内能让小车跑完比赛。只能说车赛里面软件才是重中之重，~~硬件只能说是个人就行~~。
+<h3>电机驱动</h3>
+&emsp;&emsp;电机驱动则是采用的往届学长成熟的HIP4082方案，但是我在十分成熟的方案上，出了一个最不应该出的错误，那就是将AD里面MOS管的D与S互换了，原理图是往届学长的原理图，在导入PCB绘制打板后，与学长检查近三四天，最后才发现是封装的问题，期间电机驱动板打板了至少三次，期间浪费的时间对于本就不多准备车赛时间就是雪上加霜，若不是提前把往届学长用的比赛板拿来搭建好平台让软件快速调车，这届车赛参加多多少少就是去观光的了。
+<h3>电磁运放</h3>
+&emsp;&emsp;我们基础四轮所使用的以电磁为主，因为前期的准备不充分，我按照逐飞官方的电磁运放样式打板焊接了两个，结果在弄好后才了解到我的电磁运放拿去参赛会被识别成雷同板，严重的会取消比赛并通报学校，吓得我立刻重新绘制了一块8路的电磁运放，并且将已经弄好的主控板重新打板，只因为一个电磁运放。
+<h3>比赛现场的一些见闻</h3>
+&emsp;&emsp;想要车辆跑得快，不仅仅软件很重要，硬件的选择也很重要，校本部也有一组基础四轮组，他们用的则是纯摄像头，比赛时他们的摄像头有识别误判，车辆仅仅跑了一圈便入库了，他们找了半天也没有找到摄像头在哪个地方误判，好在补赛只需要车辆跑一圈就行，也拿到了奖。而一些跑的很快的基础四轮，他们则是摄像头为主，电磁来辅助摄像头的判断，防止车辆跑出赛道，据说有的车里面还有经过训练的AI，不过tc264的富裕性能，也不是没有可能。接下来讲一些个人，个人的心态非常重要，不论是比赛上去发车的选手还是在旁边的队友，不要给压力，相信发车的队友。比赛时仅10分钟的时间，我们的发车选手在赛道上拧电磁就拧了一分钟，然后屏蔽了环岛，保证比赛有保底成绩，后面我们打开了环岛，但是车辆只跑了一圈就入库了，找了很久没找到原因，假如小车能进环岛，能跑完两圈，那么我们组的成绩是能够拿到华南赛区一等奖的，只能说还是非常遗憾的,希望下次17届比赛能拿到更好的成绩。
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大学生智能车比赛</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/25/16%E5%B1%8A%E6%99%BA%E8%83%BD%E8%BD%A6%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -308,6 +390,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大学生智能车比赛</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
