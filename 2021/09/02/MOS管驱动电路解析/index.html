@@ -6,15 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://MuleeQAQ.github.io">
-  <title>Tag: 大学生智能车比赛 | Mulee&#39;s Blog</title>
+  <title>MOS管驱动电路解析 | Mulee&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mulee&#39;s Blog">
-<meta property="og:url" content="https://muleeqaq.github.io/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%99%BA%E8%83%BD%E8%BD%A6%E6%AF%94%E8%B5%9B/index.html">
+  <meta name="description" content="驱动原理图 MOS管部分（双电机）   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;1.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;2.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;3.    驱动电源部分   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;1.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;2.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;3.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MOS管驱动电路解析">
+<meta property="og:url" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Mulee&#39;s Blog">
+<meta property="og:description" content="驱动原理图 MOS管部分（双电机）   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;1.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;2.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;3.    驱动电源部分   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;1.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;2.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;3.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_1.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_2.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_3.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_4.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_5.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_6.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_7.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/B60FE84EB36EAD4CB3E530198CFD6701.jpg">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/4550063A83C1D17DDAB5ABF4A69D151A.jpg">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_8.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_9.png">
+<meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_10.png">
+<meta property="article:published_time" content="2021-09-02T06:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-02T06:29:56.068Z">
 <meta property="article:author" content="Mulee">
+<meta property="article:tag" content="大学生智能车比赛">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image.png">
   
     <link rel="alternative" href="/atom.xml" title="Mulee&#39;s Blog" type="application/atom+xml">
   
@@ -148,36 +167,104 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-MOS管驱动电路解析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      MOS管驱动电路解析
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/" class="archive-article-date">
+
+        
+        <a href="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/" class="archive-article-date">
   	<time datetime="2021-09-02T06:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/">MOS管驱动电路解析</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="驱动原理图"><a href="#驱动原理图" class="headerlink" title="驱动原理图"></a>驱动原理图</h2><ul>
+<li><strong>MOS管部分（双电机）</strong> </li>
+</ul>
+<p>&ensp;&ensp;&ensp;&ensp;1. </p>
+<p>&ensp;&ensp;&ensp;&ensp;2. </p>
+<p>&ensp;&ensp;&ensp;&ensp;3. </p>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image.png"></p>
+<ul>
+<li><strong>驱动电源部分</strong> </li>
+</ul>
+<p>&ensp;&ensp;&ensp;&ensp;1. </p>
+<p>&ensp;&ensp;&ensp;&ensp;2. </p>
+<p>&ensp;&ensp;&ensp;&ensp;3. </p>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_1.png"></p>
+<ul>
+<li><strong>其余部分</strong> </li>
+</ul>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_2.png"></p>
+<h1 id="原理讲解（MOS管与HIP4082）"><a href="#原理讲解（MOS管与HIP4082）" class="headerlink" title="原理讲解（MOS管与HIP4082）"></a>原理讲解（MOS管与HIP4082）</h1><h3 id="1、引脚讲解"><a href="#1、引脚讲解" class="headerlink" title="1、引脚讲解"></a>1、引脚讲解</h3><p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_3.png"></p>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_4.png"></p>
+<h3 id="2、-MOS管的高边驱动与底边驱动"><a href="#2、-MOS管的高边驱动与底边驱动" class="headerlink" title="2、 MOS管的高边驱动与底边驱动"></a><strong>2、</strong> MOS管的高边驱动与底边驱动</h3><p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_5.png"></p>
+<p>高边指电源，低边指地，高边驱动和低边驱动是用来调试功率的，以驱动负载。  </p>
+<p>&ensp;&ensp;&ensp;&ensp;高边驱动：开关位于电源和负载之间； </p>
+<p>&ensp;&ensp;&ensp;&ensp;低边驱动：开关位于负载和地之间。  </p>
+<p>&ensp;&ensp;&ensp;&ensp;通俗的来讲，高边驱动（HSD）是指通过直接在用电器或者驱动装置前通过在电源线闭合开关来实现驱动装置的使能，而低边驱动(LSD)则是通过在用电器或者驱动装置后，通过闭合地线来实现驱动装置使能。  </p>
+<p>&ensp;&ensp;&ensp;&ensp;高边驱动：形象点说，像在电路的电源端加了一个可控开关。高边驱动就是控制这个开关开关。</p>
+<p>&ensp;&ensp;&ensp;&ensp;低边驱动：形象点说，像在电路的接地端加了一个可控开关。低边驱动就是控制这个开关开关。  </p>
+<p>&ensp;&ensp;&ensp;&ensp;高边驱动特点：适用于精密装置的仪器，高边开关（一般是MOSFET开关）驱动复杂一点、布线成本低，一般采用高边驱动的话就得增加自举电路。  </p>
+<p>&ensp;&ensp;&ensp;&ensp;低边驱动特点：低边驱动比较容易实现（电路也比较简单，一般由MOS管加几个电阻、电容）、适用电路简化和成本控制的情况。</p>
+<h3 id="3、电机驱动电路分析"><a href="#3、电机驱动电路分析" class="headerlink" title="3、电机驱动电路分析"></a>3、电机驱动电路分析</h3><p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_6.png"></p>
+<p>由图知我们采用HIP4082作为全桥驱动芯片，将高端驱动的NMOS作为参考地，因为我们是用的是NMOS管，所以当Ugs的电压大于开启电压，MOS管才被导通，而我在此处采用的自举的方式，输出一个恒定的开启电压，来控制MOS管导通。</p>
+<h3 id="4、自举电路"><a href="#4、自举电路" class="headerlink" title="4、自举电路"></a>4、自举电路</h3><p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_7.png"></p>
+<p>首先BHS引脚里的HS指的是High S极，也就是上管M2的S极，可以看到此处下管M6的S极是接地的，所以如果下管M6处于导通状态的时候，BHS引脚，也就是上管M2的S极就相当于接地了，这时BHS的电压也就是上图M2的S极的电压。<br>这个时候，外部电源通过自举二极管向自举电容充电。</p>
+<p>在处于目前下管M6导通，上管M2关闭的状态的时候，此时外部电源通过二极管和自举电容给电容充电，然后BHB和BHO引脚处于短接状态，此时上端MOS管M2导通。</p>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/B60FE84EB36EAD4CB3E530198CFD6701.jpg"></p>
+<p>我们先假设这里C1充满电就是12V，因为BHB和BHO短路，此时自举电容充的电就通过BHS举给了BHO，所以BHB和BHO的电压是一样的。然后此时M2的S级接地，忽略掉R1的时候电压约为12V，相当于Vgs之间是接了一个恒定的电压来保持这里NMOS管的必然导通。此处就是通过自举出来一个恒定的电压来确保Vgs的电压大于MOS管的导通电压解决了上面提到的当NMOS为高端驱动时的导通状态不确定的问题。</p>
+<p>经过以上环节之后，上管M2导通，下管M6关闭，此时BHB和BHO就不处于短接的状态了，由于电容充满电了，BHB的电压是比BHS的电压高的。此时我手绘了一下电路如下图：</p>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/4550063A83C1D17DDAB5ABF4A69D151A.jpg"></p>
+<p><strong>值得注意的是：</strong> </p>
+<p>&ensp;&ensp;&ensp;&ensp;正是因为这里自举电容只能在下管M6导通的时候充电，所以一般的NMOS桥驱动都不能输出百分之百的占空比。你可以这么理解，就是此时电容里的电是维持上管Q5持续导通的，比如我假设的这里电容充满电之后电压是12V，但是总有时候电容里的电是会放光的，此时自举电容电没了就举不动了，这个时候上管M2就关闭了，而这个过程是慢慢的，可能会导致上管的G极电压出现非饱和区和截止区，造成上管gg，所以一般限制占空比最高在 95 %   到   98 % 95%\ 到\ 98%95% 到 98% 。然后上管M2关闭之后，M6导通，继续给电容重新充电。然后循环这个过程。</p>
+<p>&ensp;&ensp;&ensp;&ensp;<br>&ensp;&ensp;&ensp;&ensp;上图只是我们使用的某一款驱动芯片，下面列出的是通用解释自举电路内部原理的图，其中Vbs（驱动电路Vb和Vs管脚之间的电压差）给集成电路高端驱动电路提供电源。该电源电压必须在10-20V 之间，以确保驱动集成电路能够完全地驱动MOS栅极器件。Vbs电源是悬浮电源，附加在Vs电压之上（Vs通常是一个高频的方波）。有许多方法可以产生Vbs悬浮电源，其中一种如本文中介绍的自举方式。这种方式的好处是简单、低廉，但也有局限性。占空比和开通时间受限于自举电容的再充电（长时间导通和大占空比时要求有充电泵电路支持，详见AN-978C了解）：</p>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_8.png"></p>
+<p>对于含有自举电路的PCB布板方法，需要注意自举电容要尽可能靠近IC的管脚。如下图所示，至少有一个低ESR的电容提供就近耦合。例如：如果使用了铝电解电容做为自举电容，就应再用一个瓷电电容。如果自举电容是瓷电或钽电容，自己作为就地耦合也就足够了。</p>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_9.png"></p>
+<h3 id="5、具体通过PWM控制电机占空比"><a href="#5、具体通过PWM控制电机占空比" class="headerlink" title="5、具体通过PWM控制电机占空比"></a>5、具体通过PWM控制电机占空比</h3><p>首先列出HIP4082芯片引脚真值表：</p>
+<p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_10.png"></p>
+<p>首先看看DIS引脚，这个引脚的作用是控制芯片是否工作的。我当初接的是低电平，也就是芯片一直保持工作。但是它也可以接一个IO口，让GPIO输出高电平或者低电平来控制芯片是否工作。</p>
+<p>再看BHO和BLO的引脚，我的理解是，B表示这个芯片控制的其中一个半桥的引脚开头字符，A就是另外一个半桥引脚的开头字符，H(high)表示的上管，L(low)表示的是下管，O表示的是ON，也就是打开的意思。通过真值表我们可以看到，这里以B开头的半桥引脚为例：</p>
+<p>当BLI为高电平的时候，意思也就是比如我现在给的 90 % 90%90% 的占空比，他处于高电平的那段时间，此时无论BHI接的什么电平，此处接的是12V高电平，这个时候下管是关闭的，上管是导通的，也就是这段时间用来给电机以 90 % 90%90% 的占空比输出。<br>当BLI为低电平的时候，也就是 90 % 90%90% 占空比的另外 10 % 10%10%处于低电平的时间段，若BHI为高电平的时候，此时上管关闭，下管导通，也就是这段时间去给自举电容充电。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -189,57 +276,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/25/16%E5%B1%8A%E6%99%BA%E8%83%BD%E8%BD%A6%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2021-08-25T12:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/09/02/%E7%9C%8B%E4%B9%A6%E6%9C%89%E6%84%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          看书有感
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/08/25/16%E5%B1%8A%E6%99%BA%E8%83%BD%E8%BD%A6%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">16届智能车比赛总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/25/16%E5%B1%8A%E6%99%BA%E8%83%BD%E8%BD%A6%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/">16届智能车比赛总结</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大学生智能车比赛</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -262,9 +407,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
