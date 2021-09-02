@@ -150,6 +150,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-四路运放电路解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/">四路运放电路解析</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2021-09-02T07:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;文章搬自我的学长<br>&emsp;&emsp;CSDN：阿波罗啦啦啦啦<br>&emsp;&emsp;文章原链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44933419/article/details/112850504">https://blog.csdn.net/weixin_44933419/article/details/112850504</a></p>
+<h1 id="四路运放电路解析"><a href="#四路运放电路解析" class="headerlink" title="四路运放电路解析"></a>四路运放电路解析</h1><p>对于智能车硬件的整体框架主要由5部分组成：电磁信号采集与处理部分、电机驱动部分、电源管理部分、主控部分、其他部分（停车模块等）</p>
+<h2 id><a href="#" class="headerlink" title></a></h2><p><strong>电磁信号采集部分</strong> </p>
+<p>这一部分对于电磁组别至关重要，对与摄像头组别依然可以保留2路作为出赛道的检测。</p>
+<h3 id="1、LC谐振电路"><a href="#1、LC谐振电路" class="headerlink" title="1、LC谐振电路"></a><strong>1、LC谐振电路</strong></h3><p>智能车比赛选择 20kHz 的交变磁场作为路径导航信号，根据麦克斯韦理论以及根据 LC 谐振电路检测小信号的原理，选取工字电感和电容搭建 LC 谐振电路进行信号采集。</p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image.png"></p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_1.png"></p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_2.png"></p>
+<p>由公式可知，为了使检测到的信号的输出幅值变大，应考虑两点：<br>第一，输出越大，R0 就要越大，为了配合信号源的输出频率 20KHz，电感越大，电感的阻抗越高，<br>第二，谐振的频率要在 20KHz 附近，<br>经过粗略计算后，本系统使用 10mH 和 6.8nF的电感和电容（计算为6.33nf，市面上只有6.8nf），但这只是大致范围，在实际选用中应对电感和电容值进行精确测量，使得到的频率尽量靠近 20kHz，并做到对称。</p>
+<p><strong>两个方案：一、买一堆电感、电容，挨个测，找相近的，当时我们买了200个，测了20个相近的（这个看脸），一个电感单个0.2元左右，校正电容单个0.5元左右。二、买别人配好的，这个价格就比较高了，3联—5联价格在50—200不等），当然这个对车辆的影响并不是很大，只要两个电感差的不是太离谱就行，使用方案一，至少车辆在2.7米/秒（整圈平均速度）都不用考虑采用方案二。</strong> </p>
+<h3 id="2、信号的放大"><a href="#2、信号的放大" class="headerlink" title="2、信号的放大"></a><strong>2、信号的放大</strong></h3><p>由于三极管放大存在温漂较大，且静电现象严重等问题，故采用集成运放芯片。信号处理模块中可采用运放采用芯片 LM358（2路）OPA2350（2路）、OPA4377（4路）。</p>
+<p>运放的选择：<br>OPA2350UA：</p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_3.png"></p>
+<p>OPA4377：</p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_4.png"></p>
+<h4 id="运放的选择"><a href="#运放的选择" class="headerlink" title="运放的选择"></a>运放的选择</h4><p>评价集成运放性能的优劣,应看其综合性能。<br>SR为转换率,单位为V/ms,其值越大,表明运放的交流特性越好;<br>Iib为运放的输入偏置电流,单位是nA;VOS为输入失调电压,单位是mV。<br>Iib和VOS值越小,表明运放的直流特性越好。<br>所以,对于放大音频、视频等交流信号的电路,选SR(转换速率)大的运放比较合适;<br>对于处理微弱的直流信号的电路,选用精度比较的高的运放比较合适(既失调电流、失调电压及温飘均比较小)。<br>在没有特殊要求的场合,尽量选用通用型集成运放,这样既可降低成本,又容易保证货源。<br>当一个系统中使用多个运放时,尽可能选用多运放集成电路,例如LM324、LF347等都是将四个运放封装在一起的集成电路。</p>
+<p><strong>在智能车比赛中，如果是初期验证方案或校赛，应使用LM324、LM358等通用型集成运放，单价在0.5-1元左右，经济实惠，好用不贵；后期完善可使用OPA2350、OPA4377等精密型运放，单价在6-15元不等。</strong> </p>
+<h3 id="3、信号的检波"><a href="#3、信号的检波" class="headerlink" title="3、信号的检波"></a><strong>3、信号的检波</strong></h3><p>使用二极管检波电路将交变的电压信号检波形成直流信号，然后再通过单片机的 AD 采集获得正比于感应电压幅值的数值。<br>使用两个二极管进行倍压检波，可以获得正比于交流电压信号峰峰值的直流信号。为了能够获得更大的动态范围， 倍压检波电路中的二极管推荐使用开启电压较小的肖特基二极管。</p>
+<p>肖特基二极管的选择：<br>可使用：SS14、1N5819HW-7-F（这个开启电压450mv@1A，比SS14小一点）。</p>
+<p>SS14：</p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_5.png"></p>
+<p>1N5819HW-7-F：</p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_6.png"></p>
+<p>后接电压跟随器以稳定输出和带负载能力。</p>
+<h4 id="电压跟随器选择："><a href="#电压跟随器选择：" class="headerlink" title="电压跟随器选择："></a><strong>电压跟随器选择：</strong></h4><p>可直接采用与运放同一芯片的另一路使用，也可以接一个通用运放。</p>
+<p>最终电路图：<br>OPA4377</p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_7.png"></p>
+<p>OPA2350（加电压跟随器）<br>这个图是引用第十三届华科三轮电磁的运放图</p>
+<p><img src="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_8.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大学生智能车比赛</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/02/%E5%9B%9B%E8%B7%AF%E8%BF%90%E6%94%BE%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MOS管驱动电路解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
