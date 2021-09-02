@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://MuleeQAQ.github.io">
   <title>MOS管驱动电路解析 | Mulee&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="驱动原理图 MOS管部分（双电机）   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;1.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;2.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;3.    驱动电源部分   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;1.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;2.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;3.">
+  <meta name="description" content="驱动原理图 MOS管部分（双电机）     驱动电源部分     其余部分    原理讲解（MOS管与HIP4082）1、引脚讲解  2、 MOS管的高边驱动与底边驱动 高边指电源，低边指地，高边驱动和低边驱动是用来调试功率的，以驱动负载。   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;高边驱动：开关位于电源和负载之间；  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;低边驱动：开关位于负">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MOS管驱动电路解析">
 <meta property="og:url" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="Mulee&#39;s Blog">
-<meta property="og:description" content="驱动原理图 MOS管部分（双电机）   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;1.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;2.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;3.    驱动电源部分   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;1.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;2.  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;3.">
+<meta property="og:description" content="驱动原理图 MOS管部分（双电机）     驱动电源部分     其余部分    原理讲解（MOS管与HIP4082）1、引脚讲解  2、 MOS管的高边驱动与底边驱动 高边指电源，低边指地，高边驱动和低边驱动是用来调试功率的，以驱动负载。   &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;高边驱动：开关位于电源和负载之间；  &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;低边驱动：开关位于负">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image.png">
 <meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_1.png">
@@ -28,8 +28,8 @@
 <meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_8.png">
 <meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_9.png">
 <meta property="og:image" content="https://muleeqaq.github.io/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_10.png">
-<meta property="article:published_time" content="2021-09-02T06:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-02T06:29:56.068Z">
+<meta property="article:published_time" content="2021-09-02T06:52:08.000Z">
+<meta property="article:modified_time" content="2021-09-02T06:56:45.984Z">
 <meta property="article:author" content="Mulee">
 <meta property="article:tag" content="大学生智能车比赛">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
 
         
         <a href="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2021-09-02T06:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-02</time>
+  	<time datetime="2021-09-02T06:52:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-02</time>
 </a>
         
       </header>
@@ -190,16 +190,10 @@
         <h2 id="驱动原理图"><a href="#驱动原理图" class="headerlink" title="驱动原理图"></a>驱动原理图</h2><ul>
 <li><strong>MOS管部分（双电机）</strong> </li>
 </ul>
-<p>&ensp;&ensp;&ensp;&ensp;1. </p>
-<p>&ensp;&ensp;&ensp;&ensp;2. </p>
-<p>&ensp;&ensp;&ensp;&ensp;3. </p>
 <p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image.png"></p>
 <ul>
 <li><strong>驱动电源部分</strong> </li>
 </ul>
-<p>&ensp;&ensp;&ensp;&ensp;1. </p>
-<p>&ensp;&ensp;&ensp;&ensp;2. </p>
-<p>&ensp;&ensp;&ensp;&ensp;3. </p>
 <p><img src="/2021/09/02/MOS%E7%AE%A1%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/image_1.png"></p>
 <ul>
 <li><strong>其余部分</strong> </li>
@@ -340,15 +334,6 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/09/02/%E7%9C%8B%E4%B9%A6%E6%9C%89%E6%84%9F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          看书有感
-        
-      </div>
-    </a>
-  
   
     <a href="/2021/08/25/16%E5%B1%8A%E6%99%BA%E8%83%BD%E8%BD%A6%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">16届智能车比赛总结</div>
@@ -470,10 +455,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大学生智能车比赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
             
             <div class="clearfix"></div>
